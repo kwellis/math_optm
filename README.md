@@ -1,17 +1,22 @@
 # Optimization Fall 2024 Class Code
 
-The following is collection of the code written for assignments for a semester long class in optimization at UAF. The class was taught in the math department by Ed Bueler.
+The following is collection of the code written for assignments for a semester long class in optimization at UAF. The class was taught in the math department by Ed Bueler. The majority is the code submitted for individual assignments. The code has not been updated after grading, so it is recommended to use at your own risk if you are taking the same class offered during a different semester. The class culiminated in a class project, which is is inside a folder called capstone.
 
-## Description
+## Capstone Class Project
 
 An in-depth paragraph about your project and overview of use.
 
 ## Getting Started
 
+Rawr
+
 ### Dependencies
 
-* Describe any prerequisites, libraries, OS version, etc., needed before installing program.
-* ex. Windows 10
+Very few dependencies are required for this repository. The biggest are an updated version of scipy, numpy and matplolib.
+
+* Numpy
+* Scipy
+* Matplotlib
 
 ### Installing
 
@@ -25,38 +30,3 @@ An in-depth paragraph about your project and overview of use.
 ```
 code blocks for commands
 ```
-
-## Help
-
-Any advise for common problems or issues.
-```
-command to run if program contains helper info
-```
-
-## Authors
-
-Contributors names and contact info
-
-ex. Dominique Pizzie  
-ex. [@DomPizzie](https://twitter.com/dompizzie)
-
-## Version History
-
-* 0.2
-    * Various bug fixes and optimizations
-    * See [commit change]() or See [release history]()
-* 0.1
-    * Initial Release
-
-## License
-
-This project is licensed under the [NAME HERE] License - see the LICENSE.md file for details
-
-## Acknowledgments
-
-Inspiration, code snippets, etc.
-* [awesome-readme](https://github.com/matiassingers/awesome-readme)
-* [PurpleBooth](https://gist.github.com/PurpleBooth/109311bb0361f32d87a2)
-* [dbader](https://github.com/dbader/readme-template)
-* [zenorocha](https://gist.github.com/zenorocha/4526327)
-* [fvcproductions](https://gist.github.com/fvcproductions/1bfc2d4aecb01a834b46)
