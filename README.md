@@ -4,7 +4,15 @@ The following is a collection of code written for assignments for a semester lon
 
 ## Capstone Class Project
 
-For the class project, a reduced Newton method with active set constraints was applied. The project was an optimization scheme for properly allocating power fluid to jet pump assisted wells.
+For the class project, a reduced Newton method with active set constraints was applied. The project was an optimization scheme for properly allocating power fluid to jet pump assisted wells. The problem takes the form:
+
+maximize \( f(x) = \sum_{i=1}^{n} q_{o\:i} \)
+
+subject to:
+
+- \( \sum_{i=1}^{n} q_{p\:i} \leq Q_{\text{p}}^{\text{tot}} \)
+- \( q_{p\:i} \geq 0 \)
+
 
 ## Getting Started
 
@@ -12,7 +20,7 @@ Rawr
 
 ### Dependencies
 
-Very few dependencies are required for this repository. The biggest are an updated version of scipy, numpy and matplolib.
+The major dependencies required are listed below.
 
 * Numpy
 * Scipy
