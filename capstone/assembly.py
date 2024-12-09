@@ -21,23 +21,16 @@ def optimize_power_fluid(well_dict: dict, Qp_tot: float) -> tuple[float, np.ndar
         dfk (np.array): Gradient at each well
         k (int): Number of Iterations
     """
-    Qp = nw.guess_Qp(well_dict, Qp_tot)
-    A, b = nw.constraint_spaces(well_dict, Qp_tot)
-    # print(f"Matrix A:\n{A}\n")
-    # print(f"Vector b:\n{b}\n")
-    active = nw.constraint_active(A, b, Qp)  # active constraints
-    # print(f"Active Constraints:\n{active}\n")
-    Z, Ar = nw.qr_split(A[active])
-    # print(f"Null Space:\n{Z}\n")
-    # print(f"Right Inverse:\n{Ar}\n")
 
+    Qp = nw.guess_Qp(well_dict, Qp_tot)  # split up power fluid
+    A, b = nw.constraint_spaces(well_dict, Qp_tot)
+    active = nw.constraint_active(A, b, Qp)  # active constraints
+    Z, Ar = nw.qr_split(A[active])
     dfk = nw.update_gradient(well_dict, Qp)
-    # hfk = nw.update_hessian(well_dict, Qp)
-    # print(f"Gradient:\n{dfk}\nHessian:\n{hfk}\n")
 
     optm_check, active, con_update = nw.optimality_test(dfk, Z, Ar, active)
-    if con_update:  # active constraint was removed, need to update
-        Z, Ar = nw.qr_split(A[active])
+    if con_update:  # active constraint was removed
+        Z, Ar = nw.qr_split(A[active])  # update Z and Ar
 
     k = 0
     while optm_check is False:
