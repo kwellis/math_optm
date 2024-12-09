@@ -22,13 +22,9 @@ Each well is required to have a non-zero minimum power fluid rate, represented a
 
 $$\sum_{i=1}^{n} q_{p i} \leq Q_p^{tot}$$
 
-### Dependencies
+### Getting Started
 
-The only significant dependency in the code is numpy, which is used for its array and linear algebra support.
-
-## Getting Started
-
-The file to call is under the folder capstone, file assemply. The main function is optimize power fluid. Which requires a dictionary that defines the well coefficient properties and a total available power fluid called qp_tot. An example of what is required to define is shown below.
+The main function is optimize power fluid inside the assemply file in the capstone folder. The function takes in a dictionary that defines the well properties. A total available power fluid also needs to be defined, which is the water to be split amongst the wells. A code example is shown below.
 
 ```python
 from capstone.assembly import optimize_power_fluid
@@ -43,6 +39,4 @@ wells = {
 Qp_tot = 12500  # max available water flow in the system
 Qo, Qp, dfk, k = optimize_power_fluid(wells, Qp_tot)
 ```
-The function will return the estimated total amount of the oil produced, the distribution of power fluid to each well, the gradient of each well and the required number of iterations to converge to an answer.
-
-Any desired number of wells can be added onto the dictionary and used to help evenly distribute the power fluid among the different available jet pumped wells.
+The function will return the estimated amount of oil produced, the distribution of power fluid to each well, the gradient of each well and the required number of iterations to converge to an answer. Any desired number of wells can be added onto the dictionary to assist in properly allocating power fluid.
