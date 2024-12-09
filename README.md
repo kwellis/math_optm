@@ -39,4 +39,4 @@ wells = {
 Qp_tot = 12500  # max available water flow in the system
 Qo, Qp, dfk, k = optimize_power_fluid(wells, Qp_tot)
 ```
-The function will return the estimated amount of oil produced, the distribution of power fluid to each well, the gradient of each well and the required number of iterations to converge to an answer. Any desired number of wells can be added onto the dictionary to assist in properly allocating power fluid.
+The function will return the estimated amount of oil produced, the distribution of power fluid to each well, the gradient of each well and the required number of iterations to converge to an answer. Any desired number of wells can be added onto the dictionary to assist in properly allocating power fluid. Additionally, the key qp_min is the minimum required power fluid for each well, and can be made as any non-zero number.
