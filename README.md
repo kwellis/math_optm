@@ -6,13 +6,17 @@ The following is a collection of code written for assignments for a semester lon
 
 For the class project, a reduced Newton method with active set constraints was applied. The project was an optimization scheme for properly allocating power fluid to jet pump assisted wells. The problem takes the form:
 
-maximize \( f(x) = \sum_{i=1}^{n} q_{o\:i} \)
+$$
+\begin{matrix} 
+\min & f(x) \\\\ 
+\text{subject to} & A x \geq b  \\\\ 
+& x \ge 0 
+\end{matrix}
+$$
 
-subject to:
+Where $f(x)$ is the summation of the oil rate for a series of different jet pumps, represnted as $q_{oi}$. The oil rate compared to the given power fluid is represnted by an exponential function $q_{oi} = c_{1i} - c_{2i} \exp{(-q_{pi} c_{3i})}$. The coefficients are found in different numerical scheme, and vary for each pump and oil well combination.
 
-- \( \sum_{i=1}^{n} q_{p\:i} \leq Q_{\text{p}}^{\text{tot}} \)
-- \( q_{p\:i} \geq 0 \)
-
+$$f(x) = \sum_{i=1}^{n} q_{o i}$$
 
 ## Getting Started
 
