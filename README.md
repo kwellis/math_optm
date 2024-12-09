@@ -14,9 +14,13 @@ $$
 \end{matrix}
 $$
 
-Where $f(x)$ is the summation of the oil rate for a series of different jet pumps, represnted as $q_{oi}$. The oil rate compared to the given power fluid is represnted by an exponential function $q_{oi} = c_{1i} - c_{2i} \exp{(-q_{pi} c_{3i})}$. The coefficients are found in different numerical scheme, and vary for each pump and oil well combination.
+Where $f(x)$ is the summation of the negative oil rate for a series of different jet pumps, represnted as $q_{oi}$. The oil rate compared to the given power fluid, $q_{pi}$ is represnted by an exponential function $q_{oi} = - c_{1i} + c_{2i} \exp{(-q_{pi} c_{3i})}$. The coefficients are found in different numerical scheme, and vary for each pump and oil well combination. It will be noted, that $q_{oi}$ is a negative number, to turn the maximization problem to minimization. The vector $x$ represents the individual power fluid rates to each well $x=(q_{pi}, q_{p2}, ...)^{T}$.
 
 $$f(x) = \sum_{i=1}^{n} q_{o i}$$
+
+There are $n+1$ constraints. Each well is required to have a non-zero minimum power fluid rate, normally represented as $q_{pi} \geq 0$. The total power fluid distributed to all the wells also needs to be lower that what is available from a surface supply pump, represnted as $Q_p^{tot}$.
+
+$$\sum_{i=1}^{n} q_{p i} \leq Q_p^{tot}$$
 
 ## Getting Started
 
